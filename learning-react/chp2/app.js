@@ -130,8 +130,8 @@ class Person
 	}
 }
 
-var individual = new Person('Emeka', 'Techer'); //Emeka is a Techer
-individual.printDetails();
+var individual = new Person('Emeka', 'Techer'); 
+individual.printDetails(); //Emeka is a Techer
 
 class Dev extends Person
 {
@@ -145,5 +145,5 @@ class Dev extends Person
 		console.log(`${this.name} is a ${this.profession} he works with, ${this.tools}`);
 	}
 }
-let tochucks = new Dev('chucks', 'software dev', 'C#, PHP, JavaScript'); //chucks is a software dev he works with, C#, PHP, JavaScript
-tochucks.printDetails();
+let tochucks = new Dev('chucks', 'software dev', 'C#, PHP, JavaScript');
+tochucks.printDetails();  //chucks is a software dev he works with, C#, PHP, JavaScript
