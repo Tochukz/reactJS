@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {addColor, rateColor, removeColor, sortColors} from './functions/actions';
+import {addColor, rateColor, removeColor, sortColors} from './functions/action-creators';
 import {SORTING} from './data/constants'
 //import store from './store';
 import storeFactory from './store-factory';
@@ -16,10 +16,18 @@ ReactDOM.render(<App />, document.getElementById('root'));
 
 
 //console.log(`Initial number of Colors: ${store.getState().colors.length}`);
-store.subscribe( () => console.log(`Next no of colors: ${store.getState().colors.length}`));
+
+/* subscribing a listener to the store */
+//store.subscribe( () => console.log(`Next no of colors: ${store.getState().colors.length}`));
+
 //console.log(store.getState().colors.map(color => color.title));
 //console.log(store.getState().colors.map(color => color.rating));
 //console.log(store.getState().sort);
+
+/* The subscribe method of the store object returns a function that can be used to unsubscribe the listener*/
+const listenerFunc = () => console.log(`Next no of colors: ${store.getState().colors.length}`);
+const unSubscribeFunc = store.subscribe(listenerFunc); //subscribe a listener to the store and return an unsubscribe function
+unSubscribeFunc(); //This call will unsubscribe the listenerFunc 
 
 //console.log("::::Working with state::::");
 store.dispatch({
