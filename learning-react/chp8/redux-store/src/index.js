@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {addColor, rateColor, removeColor, sortColors} from './functions/action-creators';
+import {addColor, rateColor, removeColor, sortColors} from './store/action-creators';
 import {SORTING} from './data/constants'
-//import store from './store';
-import storeFactory from './store-factory';
-import store from './store-factory';
+// import store from './store/store'; //Say Deprecated. A better option may be to use store factory to create store instead.
+import createStore from './store';
 
-//const store = storeFactory(true);
+/* creating a store from store factory */
+const store = createStore();
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
@@ -52,6 +52,7 @@ store.dispatch( removeColor("2222e1p5-3abl-0p523-30e4-8001l8yf2222"));
 
 //console.log(store.getState().colors.map(color => color.title));
 
+console.log('Type', typeof storeFactory);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
