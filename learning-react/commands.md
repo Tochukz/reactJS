@@ -11,6 +11,8 @@ Using yarn:
 
 ## Chapter 2: Emerging JavaScript  
 
+## Chpater 6: Props, State, and the Component Tree
+
 ## Chapter 8: Redux
 Redux rule: application state should be stored in a single immutable object. Immutable means this state object doesn’t change.   
 We will eventually update this state object by replacing it entirely.  
@@ -35,3 +37,8 @@ __Store Factory__
 ## Chapter 9:  React Redux  
 The process of passing data all the way down and back up the tree introduces complexity that libraries like Redux are designed to alleviate.   
 Instead of passing data up the tree through two-way function binding, we can dispatch actions directly from child components to update application state.   
+
+__Install react-redux__
+`$ np install react-redux --save`  
+react-redux supplies us with a component that we can use to set up our store in the context, the provider.   
+ We can wrap any React element with the provider and that element’s children will have access to the store via context.   
