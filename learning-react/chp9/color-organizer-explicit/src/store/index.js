@@ -3,9 +3,9 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {colors, sort} from './reducers';
 import data from '../data';
 
-/* In Redux, middleware is defined as a higher-order function: it’s a function that returns a function that returns a function. 
+/* In Redux, middleware is defined as a higher-order function: it’s a function that returns a function that returns a function.
  * The last function returned is invoked every time an action is dispatched.
- * When this function is invoked, you have access to the action, the store, and the function for sending the action to the next middleware. 
+ * When this function is invoked, you have access to the action, the store, and the function for sending the action to the next middleware.
  */
 /* A middleware */
 const logger = store => next => action => {
@@ -26,5 +26,8 @@ const saver = store => next => action => {
     return result;
 };
 
-const storeFactory = (initalData = data ) => createStore(combineReducers({colors, sort}), initalData, applyMiddleware(logger, saver));
+const storeFactory = (initalData = null ) => {
+  const storeDate =  initalData || data;
+  return createStore(combineReducers({colors, sort}), storeDate, applyMiddleware(logger, saver));
+}
 export default storeFactory;
