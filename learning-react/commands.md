@@ -31,3 +31,7 @@ __Store Factory__
  A factory is a function that manages the process of creating stores.
  __Middleware__  
  In Redux, middleware is defined as a higher-order function: it’s a function that returns a function that returns a function.
+
+## Chapter 9:  React Redux  
+The process of passing data all the way down and back up the tree introduces complexity that libraries like Redux are designed to alleviate.   
+Instead of passing data up the tree through two-way function binding, we can dispatch actions directly from child components to update application state.   
