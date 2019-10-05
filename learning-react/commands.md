@@ -6,7 +6,7 @@ Install yarn:
 `$ npm install -g yarn`   
 Using yarn:  
 `$ yarn install`  or `$ yarn`
-`$ yarn add [package-name]`  
+`$ yarnhadd [package-name]`  
 `$ yarn remove [packge-name]`  
 
 ## Chapter 2: Emerging JavaScript  
@@ -42,3 +42,19 @@ __Install react-redux__
 `$ np install react-redux --save`  
 react-redux supplies us with a component that we can use to set up our store in the context, the provider.   
  We can wrap any React element with the provider and that element’s children will have access to the store via context.   
+
+## Chapter 11: React Router  
+react-router-dom provide two options for managing the navigation history - HashRouter and BrowserRouter
+The HashRouter is nice for small client site that do not require a backend.  
+The BrowserRouter is preferred for production-ready application.  
+__Install React Router__  
+`$ yarn add react-router-dom`  
+
+__Installing node-saaa__  
+`$ yarn add node-sass`  
+
+Always favor component composition over reuse of CSS classes across different components.
+For example, instead of using a .Button CSS class in <AcceptButton> and <RejectButton> components, we recommend creating a <Button> component with its own .Button styles, that both <AcceptButton> and <RejectButton> can render (but not inherit).  
+
+__Install react-icons__  
+`$ yarn add react-icons`  
