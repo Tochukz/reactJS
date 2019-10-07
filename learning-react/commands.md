@@ -11,6 +11,12 @@ Using yarn:
 
 ## Chapter 2: Emerging JavaScript  
 
+## Chapter 3: Functional Programming with JavaScript
+
+## Chpater 4: Pure React 
+
+## Chpater 5: React with JSX
+
 ## Chpater 6: Props, State, and the Component Tree
 
 ## Chapter 8: Redux
@@ -58,3 +64,13 @@ For example, instead of using a .Button CSS class in <AcceptButton> and <RejectB
 
 __Install react-icons__  
 `$ yarn add react-icons`  
+
+## Chapter 12: React and the Server  
+React can be rendered isomorphically, which means that it can be in platforms other than the browser. This means we can render our UI on the server before it ever gets to the browser.   
+Taking advantage of server rendering, we can improve the performance, portability, and security of our applications.   
+
+__Isomorphism Versus Universalism__
+Isomorphic applications are applications that can be rendered on multiple platforms -  in the browser and on the server.    
+Universal code means that the exact same code can run in multiple environment i.e it is environment agnostic. e.g JavaScript can run on the browser and also on the server.    
+Although Isomorphism and Universal JavaScript are different things, they are related. In practice its very impractical to create an isomorphic application without running the same code in the browser and on the server.  
+[Read More](https://medium.com/@ghengeveld/isomorphism-vs-universal-javascript-4b47fb481beb#.ldhznr24c)
