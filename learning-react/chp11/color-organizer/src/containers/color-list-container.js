@@ -15,14 +15,14 @@ const mapStateToProps = ({colors}, {match}) => ({
 * This action creator passed as func properties when called will automatically dispatch it's action.
 * It is recommended to use object literal like we do here.
 */
-const mapStateToDispatch = {
+const mapDispatchToProp = {
     removeColor,
     rateColor,
 }
 
 /* Using a function instead of an object. An object is recommended  */
 /*
-const mapStateToDispatch = dispatch => ({
+const mapDispatchToProp = dispatch => ({
   onRemove(id) {
     dispatch(removeColor(id))            
   },            
@@ -31,6 +31,6 @@ const mapStateToDispatch = dispatch => ({
   }
 })
 */
-const ColorListContainer = connect(mapStateToProps, mapStateToDispatch)(ColorList);
+const ColorListContainer = connect(mapStateToProps, mapDispatchToProp)(ColorList);
 
 export default ColorListContainer;
