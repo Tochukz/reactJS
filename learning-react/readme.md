@@ -13,11 +13,11 @@ Using yarn:
 
 ## Chapter 3: Functional Programming with JavaScript
 
-## Chpater 4: Pure React 
+## Chapter 4: Pure React
 
-## Chpater 5: React with JSX
+## Chapter 5: React with JSX
 
-## Chpater 6: Props, State, and the Component Tree
+## Chapter 6: Props, State, and the Component Tree
 
 ## Chapter 8: Redux
 Redux rule: application state should be stored in a single immutable object. Immutable means this state object doesn’t change.   
