@@ -44,8 +44,8 @@ __Store Factory__
 The process of passing data all the way down and back up the tree introduces complexity that libraries like Redux are designed to alleviate.   
 Instead of passing data up the tree through two-way function binding, we can dispatch actions directly from child components to update application state.   
 
-__Install react-redux__
-`$ np install react-redux --save`  
+__Install react-redux__  
+`$ npm install react-redux --save`  
 react-redux supplies us with a component that we can use to set up our store in the context, the provider.   
  We can wrap any React element with the provider and that element’s children will have access to the store via context.   
 
@@ -60,10 +60,12 @@ __Installing node-saaa__
 `$ yarn add node-sass`  
 
 Always favor component composition over reuse of CSS classes across different components.
-For example, instead of using a .Button CSS class in <AcceptButton> and <RejectButton> components, we recommend creating a <Button> component with its own .Button styles, that both <AcceptButton> and <RejectButton> can render (but not inherit).  
+For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but not inherit).  
 
 __Install react-icons__  
 `$ yarn add react-icons`  
+
+[React Router Programatic Navigation](https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router)
 
 ## Chapter 12: React and the Server  
 React can be rendered isomorphically, which means that it can be in platforms other than the browser. This means we can render our UI on the server before it ever gets to the browser.   
