@@ -3,6 +3,7 @@ import './App.css';
 
 import Book from './components/Book';
 import Time from './components/Time';
+import Car from './components/Car';
 
 function App() {
   return (
@@ -11,8 +12,11 @@ function App() {
         <div className="col-sm-4">
           <Book />          
         </div>
-        <div className="col-sm-4">
+        <div className="col-sm-3">
           <Time />
+        </div>
+        <div className="col-sm-4">
+          <Car />
         </div>
       </div>    
     </div>

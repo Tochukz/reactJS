@@ -2,17 +2,17 @@ import React, { useState, useEffect} from 'react';
 
 export default function Time() {
   const [time, setTime] = useState(new Date());
-  const [humanTime, setHumanTIme] = useState('');
+  const [humanTime, setHumanTime] = useState('');
 
   /* This is same as componentDidMount, componentDidUpdate and componentWillUnmount() life cycle methods combined. 
     It will be called after every render - after the first render and after every update */
   useEffect(() => {
-    setHumanTIme(time.toLocaleTimeString());
+    setHumanTime(time.toLocaleTimeString());
 
     /* This OPTIONAL returned function is synanymous to componentWillUnmmount() lift cycle method.  
     It will be called when the component unmounts and effects from previous render will be cleaned up.*/
     return () => {
-      setHumanTIme('Component Unmounted');
+      setHumanTime('Component Unmounted');
     }
   });
 
