@@ -4,6 +4,7 @@ import './App.css';
 import Book from './components/Book';
 import Time from './components/Time';
 import Car from './components/Car';
+import GrandFather from './components/family/GrandFather';
 
 function App() {
   return (
@@ -19,6 +20,11 @@ function App() {
           <Car />
         </div>
       </div>    
+      <div className="row">
+        <div className="col-sm-4">
+          <GrandFather />
+        </div>
+      </div>
     </div>
   );
 }
