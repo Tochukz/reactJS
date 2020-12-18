@@ -32,7 +32,13 @@ io.on("connection", socket => {
      }
      interval = setInterval(() => getApiAndEmit(socket), 10000);
      socket.on("disconnect", () => console.log("Client disconnected"));
+     socket.on('pingMsg', msg => {
+        console.log('ping', msg)
+        const reverseMsg = msg.split("").reverse().join("");
+        socket.emit('pongMsg', `- ${reverseMsg}`);
+     });
 });
+
 
 server.listen(port, () => console.log(`Listening on port ${port}`));
 
