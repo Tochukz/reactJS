@@ -4,30 +4,39 @@ import socketIOClient from "socket.io-client";
 class App extends Component {
   constructor() {
     super();
+    const baseUrl = "https://api.ojlinks.tochukwu.xyz"; // "http://127.0.0.1:8084"
     this.state = {
       response: false,
       pingMsg: '',
-      endpoint: "http://127.0.0.1:4001"
+      baseUri: baseUrl,
     }
-    const { endpoint } = this.state;
-    this.socket = socketIOClient(endpoint);
+    const { baseUri } = this.state;
+    this.socket = socketIOClient(baseUri);
     this.pingServer = this.pingServer.bind(this);
     this.updatePing = this.updatePing.bind(this);
+
+    this.inputRef = React.createRef();
   }
 
   componentDidMount() {
     this.socket.on("FromAPI", data => this.setState({response: data}));
     this.socket.on("pongMsg", data=> this.setState({pongMsg: data}));
+
+    const { baseUri } = this.state;
+    fetch(`${baseUri}/api/categories/1`)
+        .then(response => response.json())
+        .then(data => console.log('Data', data))
+        .catch(err => console.error(err));
   }
 
   pingServer() {
     const { pingMsg } = this.state;
     this.socket.emit('pingMsg', pingMsg); 
+    this.inputRef.current.value = '';
   }
 
   updatePing(event) {
     this.setState({pingMsg: event.target.value});
-    event.target.value = '';
   }
 
   render() {
@@ -37,7 +46,7 @@ class App extends Component {
         {response ? <p>The temperature in Florence is : {response} &#8457;</p>: <p>Loading...</p>}
         <p>Response: {pongMsg}</p>
         <p>
-          <input onBlur={this.updatePing} />
+          <input onBlur={this.updatePing} ref={this.inputRef} />
           <button onClick={this.pingServer}>Ping</button>
         </p>
     </div>)
