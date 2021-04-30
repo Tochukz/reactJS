@@ -8,6 +8,7 @@ class App extends Component {
     this.state = {
       response: false,
       pingMsg: '',
+      time: '',
       baseUri: baseUrl,
     }
     const { baseUri } = this.state;
@@ -18,8 +19,11 @@ class App extends Component {
     this.inputRef = React.createRef();
   }
 
-  componentDidMount() {
-    this.socket.on("FromAPI", data => this.setState({response: data}));
+  componentDidMount() {    
+    this.socket.on("FromAPI", data => { 
+      const time = new Date().toTimeString().substr(0, 8);
+      this.setState({response: data, time}) 
+    });
     this.socket.on("pongMsg", data=> this.setState({pongMsg: data}));
 
     const { baseUri } = this.state;
@@ -40,10 +44,10 @@ class App extends Component {
   }
 
   render() {
-    const { response, pongMsg } = this.state;
+    const { response, pongMsg, time } = this.state;
     return (
     <div style={{textAling: "center", margin: '2em'}}>
-        {response ? <p>The temperature in Florence is : {response} &#8457;</p>: <p>Loading...</p>}
+        {response ? <p>The temperature in Florence is : {response} &#8457; at {time}</p>: <p>Loading...</p>}
         <p>Response: {pongMsg}</p>
         <p>
           <input onBlur={this.updatePing} ref={this.inputRef} />
