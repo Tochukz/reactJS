@@ -11,7 +11,7 @@ const ColorList = ({colors = [], onRate = r => r, onRemove = p => p}) =>
         }
     </div>
 
-ColorList.protoType = {
+ColorList.propType = {
     colors: PropTypes.array,
     onRate: PropTypes.func,
     onRemove: PropTypes.func
